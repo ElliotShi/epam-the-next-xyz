@@ -6,7 +6,7 @@ var ShopSchema =  new Schema({
   title: {
     type: String,
     required: true,
-    }
+    },
   summary: String,
   image: String,
   author: String,
