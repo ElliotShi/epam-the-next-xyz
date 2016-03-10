@@ -24,4 +24,15 @@ $(document).ready(function(){
     }
   })
 
+  var flag = true;
+  $("#addArticle").bind('click',function(){
+    if(flag){
+      $(".addForm").show();
+      flag = false;
+    }else{
+      $(".addForm").hide();
+    }
+
+  })
+
 })

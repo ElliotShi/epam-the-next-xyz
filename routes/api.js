@@ -14,6 +14,16 @@ router.get('/articles', function(req, res, next) {
 	});
 });
 
+router.post('/articles', function(req, res, next){
+  shop.create(req.body, function(err, article) {
+    if(err){
+       res.render('/dashboard', { message: "Get error, can not add!!"})
+    }else{
+      res.render('/dashboard', { message: "Article added!!"});
+    }
+  });
+})
+
 router.get('/articles/:id', function(req, res, next) {
 	var id = req.params.id;
 	res.header("Access-Control-Allow-Origin", "*");

@@ -6,13 +6,17 @@ var UserSchema =  new Schema({
   name: {
     type: String,
     unique: true,
+    required: true,
     },
   email: {
       type: String,
       unique: true
+      required: true,
     },
-  password: String,
-  access: Number,
+  password: {
+    type: String,
+    required: true,
+    }
 });
 
 UserSchema.method('validPassword', function(password, callback) {

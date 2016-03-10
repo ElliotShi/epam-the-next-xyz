@@ -3,7 +3,10 @@ var Schema = mongoose.Schema;
 
 // create a schema for shop
 var ShopSchema =  new Schema({
-  title: String,
+  title: {
+    type: String,
+    required: true,
+    }
   summary: String,
   image: String,
   author: String,
