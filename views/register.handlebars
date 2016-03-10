@@ -2,23 +2,32 @@
 <p>Register for The The Next below...</p>
 <form action="/register" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input name="name" type="name" class="form-control" id="exampleInputName1" placeholder="Full Name">
+    <label for="exampleInputEmail1">Name
+      {{#if "{{errorName}} != null"}}
+        <span style="color:red">{{errorName}}</span>
+      {{/if}}
+    </label>
+    <input name="username" type="name" class="form-control" id="exampleInputName1" placeholder="Full Name" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    <label for="exampleInputEmail1">Email address
+      {{#if "{{errorMail}} != null"}}
+        <span style="color:red">{{errorMail}}</span>
+      {{/if}}
+    </label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> Check me out
+      <input type="checkbox" required> Redgardless of sickness and death, regardless of wealth and poverty, just register!!
     </label>
   </div>
   <button type="submit" class="btn btn-inverse btn-lg">Register</button>
+  <a href="/login">Already got a account, login>></a>
 </form>
 <br>
 <div class="panel panel-default">
